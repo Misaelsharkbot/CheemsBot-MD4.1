@@ -88,7 +88,7 @@ async function startXeonBotInc() {
     const callerId = json.content[0].attrs['call-creator']
     if (json.content[0].tag == 'offer') {
     let xeonfek = await XeonBotInc.sendContact(callerId, global.owner)
-    XeonBotInc.sendMessage(callerId, { text: `Automatic Block System!\nDon't Call Bot!\nPlease Ask Or Contact The Owner To Unblock You!`}, { quoted : xeonfek })
+    XeonBotInc.sendMessage(callerId, { text: `¡Sistema de bloqueo automático!\n¡No llame al bot!\n¡Pregunte o comuníquese con el propietario para desbloquearlo!`}, { quoted : xeonfek })
     await sleep(8000)
     await XeonBotInc.updateBlockStatus(callerId, "block")
     }
@@ -121,15 +121,15 @@ async function startXeonBotInc() {
        }
        let lolXeon = { url : ppgc }
        if (pea[0].announce == true) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Closed By Admin, Now Only Admin Can Send Messages !`, `${botname}`, lolXeon, [])
+       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nEl grupo ha sido cerrado por el administrador, ¡ahora solo el administrador puede enviar mensajes!`, `${botname}`, lolXeon, [])
        } else if(pea[0].announce == false) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nThe Group Has Been Opened By Admin, Now Participants Can Send Messages !`, `${botname}`, lolXeon, [])
+       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nEl grupo ha sido abierto por el administrador, ¡ahora los participantes pueden enviar mensajes!`, `${botname}`, lolXeon, [])
        } else if (pea[0].restrict == true) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Restricted, Now Only Admin Can Edit Group Info !`, `${botname}`, lolXeon, [])
+       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nLa información del grupo ha sido restringida, ¡ahora solo el administrador puede editar la información del grupo!`, `${botname}`, lolXeon, [])
        } else if (pea[0].restrict == false) {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Info Has Been Opened, Now Participants Can Edit Group Info !`, `${botname}`, lolXeon, [])
+       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nSe ha abierto la información del grupo, ¡ahora los participantes pueden editar la información del grupo!`, `${botname}`, lolXeon, [])
        } else {
-       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `${botname}`, lolXeon, [])
+       XeonBotInc.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nEl asunto del grupo se ha cambiado a *${pea[0].subject}*`, `${botname}`, lolXeon, [])
      }
     })
     
@@ -174,20 +174,20 @@ XeonLft = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeUR
 	            const xmembers = metadata.participants.length
                 let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: XeonWlcm, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 xeonbody = `┌─❖
-│「 𝗛𝗶 👋 」
+│「 𝐇𝐎𝐋𝐀 👋 」
 └┬❖ 「 @${xeonName.split("@")[0]}  」
-   │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
+   │✑  𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐎 𝐀
    │✑  ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │✑  𝐌𝐈𝐄𝐍𝐁𝐑𝐎 𝐍𝐫𝐨 : 
    │✑ ${xmembers}th
-   │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
+   │✑  𝐄𝐍𝐓𝐑𝐎 : 
    │✑ ${xtime} ${xdate}
    └───────────────┈ ⳹`
       //if you copy the code value,
    //dont forget to put my name(Xeon) as credit
    //you fail to put, i sue you for sure!
 let buttons = [
-{buttonId: `wkwwk`, buttonText: {displayText: 'Welcome 💐'}, type: 1}
+{buttonId: `wkwwk`, buttonText: {displayText: '𝙱𝚒𝚎𝚗𝚟𝚎𝚗𝚒𝚍𝚘 🎇'}, type: 1}
 ]
 let buttonMessage = {
 document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'),
@@ -202,7 +202,7 @@ buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 title: `${ownername}`,
-body: `Don't forget to read group description`,
+body: `No olvides leer la descripción del grupo`,
 mediaType:2,
 thumbnail: XeonWlcm,
 sourceUrl: `${websitex}`,
@@ -218,13 +218,13 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
                     const xeonmembers = metadata.participants.length
                     let unicorndoc = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "916909137213-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: xeonbuffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'xeon', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                     xeonbody = `┌─❖
-│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
+│「 𝐀𝐃𝐈𝐎𝐒 👋 」
 └┬❖ 「 @${xeonName.split("@")[0]}  」
-   │✑  𝗟𝗲𝗳𝘁 
+   │✑  𝐒𝐄 𝐅𝐔𝐄
    │✑ ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
+   │✑  𝐌𝐈𝐄𝐌𝐁𝐑𝐎 : 
    │✑ ${xeonmembers}th
-   │✑  𝗧𝗶𝗺𝗲 : 
+   │✑  𝐓𝐈𝐄𝐌𝐏𝐎 : 
    │✑  ${xeontime} ${xeondate}
    └───────────────┈ ⳹`
       //if you copy the code value,
@@ -246,7 +246,7 @@ buttons: buttons,
 headerType: 4,
 contextInfo:{externalAdReply:{
 title: `${ownername}`,
-body: `Bye! my friend, take care.`,
+body: `Esperemos que no vuelva -_-`,
 mediaType:2,
 thumbnail: XeonLft,
 sourceUrl: `${websitex}`,
@@ -300,7 +300,7 @@ XeonBotInc.sendMessage(anu.id, buttonMessage, {quoted:unicorndoc})
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await XeonBotInc.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await XeonBotInc.getName(i + '@s.whatsapp.net')}\nFN:${global.ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${global.ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${global.socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${global.location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await XeonBotInc.getName(i + '@s.whatsapp.net')}\nFN:${global.ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click para entrar\nitem2.EMAIL;type=INTERNET:${global.ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${global.socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${global.location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    	////////////////////////////////////////////////////////////vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:${botscript}\nitem2.X-ABLabel:Script\nitem3.URL:${websitex}\nitem3.X-ABLabel:Script\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
