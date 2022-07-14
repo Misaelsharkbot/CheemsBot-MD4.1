@@ -8029,18 +8029,18 @@ let buttons = [
 ]
 let buttonMessage = {
 image: { url: anu.thumbnail },
-caption: `*| YOUTUBE PLAY |*
+caption: `*| 𝐘𝐎𝐔𝐓𝐔𝐁𝐄 𝐏𝐋𝐀𝐘 |*
 
-${global.themeemoji} Title : ${anu.title}
-${global.themeemoji} Ext : Search
-${global.themeemoji} ID : ${anu.videoId}
-${global.themeemoji} Duration : ${anu.timestamp}
-${global.themeemoji} Viewers : ${anu.views}
-${global.themeemoji} Uploaded : ${anu.ago}
-${global.themeemoji} Author : ${anu.author.name}
-${global.themeemoji} Channel : ${anu.author.url}
-${global.themeemoji} Description : ${anu.description}
-${global.themeemoji} Url : ${anu.url}`,
+${global.themeemoji} 𝚃𝙸𝚃𝚄𝙻𝙾 : ${anu.title}
+${global.themeemoji} 𝙴𝚇𝚃 : Search
+${global.themeemoji} 𝙸𝙳 : ${anu.videoId}
+${global.themeemoji} 𝙳𝚄𝚁𝙰𝙲𝙸𝙾𝙽 : ${anu.timestamp}
+${global.themeemoji} 𝚅𝙸𝚂𝚃𝙰𝚂 : ${anu.views}
+${global.themeemoji} 𝚂𝚄𝙱𝙸𝙳𝙾 : ${anu.ago}
+${global.themeemoji} 𝙰𝚄𝚃𝙾𝚁 : ${anu.author.name}
+${global.themeemoji} 𝙲𝙰𝙽𝙰𝙻 : ${anu.author.url}
+${global.themeemoji} 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝙲𝙸𝙾𝙽 : ${anu.description}
+${global.themeemoji} 𝚄𝚁𝙻 : ${anu.url}`,
 footer: `${global.botname}`,
 buttons: buttons,
 headerType: 4,
@@ -8156,7 +8156,7 @@ if (isBanChat) return reply(mess.banChat)
 	  case 'pinterest': case 'pin': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!args.join(" ")) return reply("What picture are you looking for?")
+if (!args.join(" ")) return reply("¿Qué imagen estás buscando?")
 try {
 hx.pinterest(args.join(" ")).then(async(res) => {
 imgnyee = res[Math.floor(Math.random() * res.length)]
@@ -8191,12 +8191,12 @@ case 'mediafire': {
 if (!text) return reply(mess.linkm)
 if (!isUrl(args[0]) && !args[0].includes('mediafire.com')) return reply(`The link you provided is invalid`)
 const baby1 = await mediafireDl(text)
-if (baby1[0].size.split('MB')[0] >= 999) return reply('*File Over Limit* '+util.format(baby1))
-const result4 = `*MEDIAFIRE DOWNLOADER*
+if (baby1[0].size.split('MB')[0] >= 999) return reply('*Archivo por encima del límite* '+util.format(baby1))
+const result4 = `*𝙼𝙴𝙳𝙸𝙰𝙵𝙸𝚁𝙴*
 				
-*Name* : ${baby1[0].nama}
-*Size* : ${baby1[0].size}
-*Mime* : ${baby1[0].mime}
+*Nombre* : ${baby1[0].nama}
+*Peso* : ${baby1[0].size}
+*Tipo* : ${baby1[0].mime}
 *Link* : ${baby1[0].link}`
 reply(`${result4}`)
 XeonBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
@@ -8329,7 +8329,7 @@ break
                 XeonBotInc.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
-                } else reply(`Reply To The Audio You Want To Change With Caption *${prefix + command}*`)
+                } else reply(`Responda al audio que desea cambiar con el comando *${prefix + command}*`)
                 } catch (e) {
                 reply(e)
                 }
@@ -8343,7 +8343,7 @@ break
                 if (!m.quoted.fileSha256) return reply(`SHA256 Hash Missing`)
                 if (!text) return reply(`For What Command?`)
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return reply(`You Have No Permission To Change This Sticker Command`)
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return reply(`No tienes permiso para cambiar este comando de sticker`)
                 global.db.data.sticker[hash] = {
                     text,
                     mentionedJid: m.mentionedJid,
@@ -8361,17 +8361,17 @@ break
 	if (isBanChat) return reply(mess.banChat)
                 let hash = m.quoted.fileSha256.toString('base64')
                 if (!hash) return reply(`No Hashes`)
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return reply(`You Have No Permission To Delete This Sticker Command`)
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return reply(`No tienes permiso para eliminar este comando de sticker`)
                 delete global.db.data.sticker[hash]
-                reply(`Done!`)
+                reply(`Listo!`)
             }
             break
             case 'listcmd': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 let teks = `
-*Hash List*
-Info: *bold* hash is Locked
+*────────[ 𝐋𝐈𝐒𝐓𝐀 𝐂𝐌𝐃 ]────────*
+Información: *negrita* hash está bloqueado
 ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
 `.trim()
                 XeonBotInc.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
@@ -8559,7 +8559,7 @@ View List Of Messages With ${prefix}listmsg`)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 XeonBotInc.public = true
-                reply('Successful Change To Public Usage')
+                reply('Cambio exitoso al uso público')
             }
             break
             case 'self': {
@@ -8567,14 +8567,14 @@ View List Of Messages With ${prefix}listmsg`)
 	if (isBanChat) return reply(mess.banChat)
                 if (!isCreator) return replay(`${mess.owner}`)
                 XeonBotInc.public = false
-                reply('Successful Change To Self Usage')
+                reply('Cambio exitoso al autouso')
             }
             break
 case 'setstatuts':
 case 'setbio':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-if (!q) return reply('Send orders *#setbio text*')
+if (!q) return reply('Enviar pedidos *#setbio texto*')
 XeonBotInc.setStatus(`${q}`)
 reply(mess.success)
 break
@@ -8592,7 +8592,7 @@ if (antitags === false) return
 global.antitags = false
 replay(`Successfully deactivated antitag!`)
 } else {
-replay('Choose on or off')
+replay('Elija encendido o apagado')
 }
 }
 break
@@ -8629,9 +8629,9 @@ break
                 neww = performance.now()
                 oldd = performance.now()
                 respon = `
-Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+🚅 𝚁𝚎𝚜𝚙𝚘𝚗𝚍𝚎 𝚎𝚗 ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _𝚖𝚒𝚕𝚎𝚜𝚎𝚐𝚞𝚗𝚍𝚘𝚜_\n\n𝚃𝚒𝚎𝚖𝚙𝚘 𝚊𝚌𝚝𝚒𝚟𝚘 : ${runtime(process.uptime())}
 
-💻 Info Server
+*💻 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝙲𝙸𝙾𝙽 𝙳𝙴𝙻 𝚂𝙴𝚁𝚅𝙸𝙳𝙾𝚁*
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 
 _NodeJS Memory Usaage_
